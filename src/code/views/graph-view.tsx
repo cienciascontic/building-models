@@ -260,6 +260,7 @@ export class GraphView extends Mixer<GraphViewProps, GraphViewState> {
               animateGraphs={this.state.isRecording || this.state.animateGraphs}
               hideGraphs={this.state.hideGraphs}
               onSliderDragStart={this.handleSliderDragStart}
+              onSliderDragEnd={this.handleSliderDragEnd}
             />)}
         </div>
       </div>
@@ -726,6 +727,10 @@ export class GraphView extends Mixer<GraphViewProps, GraphViewState> {
 
   private handleSliderDragStart = (key: string) => {
     this.currentSliderNodeKey = key;
+    this.props.graphStore.startNodeSliderDrag(key);
   }
 
+  private handleSliderDragEnd = (key: string) => {
+    this.props.graphStore.endNodeSliderDrag(key);
+  }
 }

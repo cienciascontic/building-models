@@ -102,6 +102,8 @@ export declare class GraphStoreClass extends StoreClass {
   public changeNodeWithKey(key: string, data: any): void;
   public startNodeEdit(): void;
   public endNodeEdit(): void;
+  public startNodeSliderDrag(key: string): void;
+  public endNodeSliderDrag(key: string): void;
   public clickLink(link: Link, multipleSelectionsAllowed: boolean): void;
   public editLink(link: Link): Link;
   public changeLink(link: Link, changes: any): void;
@@ -133,6 +135,7 @@ export const GraphStore: GraphStoreClass = Reflux.createStore({
     this.filename           = null;
     this.filenameListeners  = [];
     this.ready = false;
+    this.unscaledNodes      = [];
 
     // wait because of require order
     setTimeout(() => {
@@ -694,6 +697,22 @@ export const GraphStore: GraphStoreClass = Reflux.createStore({
 
   endNodeEdit() {
     return this.undoRedoManager.endCommandBatch();
+  },
+
+  startNodeSliderDrag(key: string) {
+    const node = this.nodeKeys[key];
+    if (node) {
+      _.map(node.outNodes(), (outNode: Node) => outNode.unscaled = true);
+      this.updateListeners();
+    }
+  },
+
+  endNodeSliderDrag(key: string) {
+    const node = this.nodeKeys[key];
+    if (node) {
+      _.map(node.outNodes(), (outNode: Node) => outNode.unscaled = false);
+      this.updateListeners();
+    }
   },
 
   clickLink(link, multipleSelectionsAllowed) {
