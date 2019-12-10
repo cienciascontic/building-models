@@ -702,6 +702,7 @@ export const GraphStore: GraphStoreClass = Reflux.createStore({
   startNodeSliderDrag(key: string) {
     const node = this.nodeKeys[key];
     if (node) {
+      node.unscaled = true;
       _.map(node.outNodes(), (outNode: Node) => outNode.unscaled = true);
       this.updateListeners();
     }
@@ -710,6 +711,7 @@ export const GraphStore: GraphStoreClass = Reflux.createStore({
   endNodeSliderDrag(key: string) {
     const node = this.nodeKeys[key];
     if (node) {
+      node.unscaled = false;
       _.map(node.outNodes(), (outNode: Node) => outNode.unscaled = false);
       this.updateListeners();
     }

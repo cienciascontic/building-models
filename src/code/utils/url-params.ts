@@ -21,9 +21,11 @@ export interface UrlParams {
   lang?: string;
   showTopology?: string;
   enableAllBelowZero?: string;
+  showNodeRange?: string;
 }
 
 export const urlParams: UrlParams = params;
 
 export const ENABLE_ALL_BELOW_ZERO = urlParams.enableAllBelowZero === "true";
+export const SHOW_NODE_RANGE = urlParams.showNodeRange === "true";
 
