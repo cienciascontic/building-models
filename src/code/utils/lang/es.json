@@ -181,7 +181,7 @@
     "~NODE-RELATION-EDIT.VARIABLE_FLOW_TARGET_B": " %{sourceTitle} se transferirá cada ",
     "~SIMULATION.COMPLEXITY.STATIC": "Simulación equilibrio estático",
     "~SIMULATION.COMPLEXITY.TIME": "Simulación dinámica x tiempo",
-    "~DROP.ONLY_ALLOWED_IF_IFRAMED": "Sorry, dropping items of this type is only allowed if iframed.",
+    "~DROP.ONLY_ALLOWED_IF_IFRAMED": "Perdón, no se puede soltar un item de este tipo acá.",
     "~SAGEMODELER.MENU.CLOSE": "Cerrar",
     "~SAGEMODELER.MENU.IMPORT": "Importar...",
     "~SAGEMODELER.OPEN_OR_CREATE.TITLE": "¿Que quieres hacer?",
@@ -212,5 +212,5 @@
     "~CODAP.DATA.SIMULATION_COLLECTION_NAME": "Experimentos",
     "~CODAP.DATA.SAMPLES_COLLECTION_NAME": "Puntos de datos",
     "~CODAP.DATA.SAMPLE_COLUMN_NAME": "Punto del dato",
-    "~DOCUMENT.ACTIONS.DATA.CONTINUOUSLY": "Continuously"
+    "~DOCUMENT.ACTIONS.DATA.CONTINUOUSLY": "Continuamente"
 }
